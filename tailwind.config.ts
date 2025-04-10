@@ -68,19 +68,6 @@ export default {
 					low: '#3b82f6',    // Blue for low risk
 					medium: '#f59e0b', // Amber for medium risk
 					high: '#ef4444',   // Red for high risk
-				},
-				// San Pedro app specific colors
-				sanpedro: {
-					green: {
-						DEFAULT: '#0E6634', // Primary green background
-						light: '#B4DFCA',   // Light green for cards
-						dark: '#084D26',    // Darker green for accents
-					},
-					yellow: '#FFD34E',      // Yellow for sun icon
-					text: {
-						light: '#FFFFFF',   // White text
-						dark: '#084D26',     // Dark green text
-					}
 				}
 			},
 			borderRadius: {
