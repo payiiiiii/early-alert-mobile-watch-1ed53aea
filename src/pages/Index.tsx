@@ -6,6 +6,7 @@ import AlertCard from "@/components/AlertCard";
 import StatsCard from "@/components/StatsCard";
 import MapView from "@/components/MapView";
 import { currentAlerts, riskLevel } from "@/data/mockData";
+import { AlertLevel } from "@/types";
 import { AlertTriangle, BarChart, Map } from "lucide-react";
 
 const Index = () => {
@@ -23,13 +24,16 @@ const Index = () => {
     { low: 0, medium: 0, high: 0 }
   );
 
+  // Ensure we're passing the correct type for level and trend
+  const currentLevel: AlertLevel = riskLevel.current as AlertLevel;
+
   return (
     <div className="flex flex-col min-h-screen bg-background pb-16">
       <Header title="Early Warning System" />
       
       <main className="flex-1 p-4">
         <RiskLevelIndicator 
-          level={riskLevel.current}
+          level={currentLevel}
           trend={riskLevel.trend as "increasing" | "stable" | "decreasing"}
           className="mb-6"
         />
