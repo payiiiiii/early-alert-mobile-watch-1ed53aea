@@ -1,11 +1,14 @@
 
 export type AlertLevel = 'low' | 'medium' | 'high';
 
+export type HazardType = 'heat_index' | 'air_pollution' | 'flood' | 'thunderstorm';
+
 export interface Alert {
   id: string;
   title: string;
   description: string;
   level: AlertLevel;
+  type: HazardType;
   timestamp: string;
   location: {
     lat: number;
@@ -21,6 +24,12 @@ export interface HistoricalData {
     medium: number;
     high: number;
   };
+  hazardTypes: {
+    heat_index: number;
+    air_pollution: number;
+    flood: number;
+    thunderstorm: number;
+  };
 }
 
 export interface User {
@@ -33,5 +42,6 @@ export interface User {
     push: boolean;
     sms: boolean;
     minimumLevel: AlertLevel;
+    subscribedTypes: HazardType[];
   };
 }
